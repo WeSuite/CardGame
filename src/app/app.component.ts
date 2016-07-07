@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 
+
 @Component({
   moduleId: module.id,
   selector: 'app-root',

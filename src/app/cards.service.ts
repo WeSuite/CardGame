@@ -5,4 +5,6 @@ export class CardsService {
 
   constructor() {}
 
+  getCards() : string[] { return ["Boulder"];
+  }
 }
