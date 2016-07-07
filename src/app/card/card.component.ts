@@ -10,7 +10,11 @@ import {CardsService} from "../cards.service";
 })
 export class CardComponent implements OnInit {
 
-  constructor() {}
+  cards;
+  constructor(cardService: CardsService) {
+    this.cards = cardService.getCards();
+  }
+
 
   ngOnInit() {
   }
