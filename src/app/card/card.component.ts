@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CardsService} from "../cards.service";
+import {Card} from "./card";
 
 @Component({
   moduleId: module.id,
@@ -10,9 +11,9 @@ import {CardsService} from "../cards.service";
 })
 export class CardComponent implements OnInit {
 
-  cards;
+  c: Card;
   constructor(cardService: CardsService) {
-    this.cards = cardService.getCards();
+    this.c = cardService.getCards();
   }
 
 
