@@ -11,9 +11,9 @@ import {Card} from "./card";
 })
 export class CardComponent implements OnInit {
 
-  c: Card;
+  cards: Array<Card>;
   constructor(cardService: CardsService) {
-    this.c = cardService.getCards();
+    this.cards = cardService.getCards();
   }
 
 
