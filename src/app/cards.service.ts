@@ -12,28 +12,23 @@ export class CardsService {
 
   getCards()
   {
-     var url = "https://api.magicthegathering.io/v1/cards?page=5&pageSize=1";
-
+     var url = "https://api.magicthegathering.io/v1/cards?page=5&pageSize=3";
+    // var cards = Array<Card>();
     //  var c = new Array<Card>();
     //  c[0] = new Card();
     //  c[0].name = "Boulder";
      return this.http.get(url)
      .map((responseData) => {
-       console.log(responseData);
-       return responseData.json();
+       return responseData.json().cards;
       })
-       .map((cards: Array<any>) => {
-         let result:Array<Card> = [];
-         if(cards){
-             console.log(cards);
-           for (var i = 0; i <= 1; i++){
-              //console.log();
+       .map((cardJSON: Array<any>) => {
+           let result:Array<Card> = [];
+           cardJSON.forEach((card) => {
+             console.log(card);
              result.push(
-               new Card(cards[0].name)
+               new Card(card.name)
              );
-           };
-          }
-
+           });
          return result;
        });
   }
