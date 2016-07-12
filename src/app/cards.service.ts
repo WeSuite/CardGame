@@ -15,7 +15,7 @@ export class CardsService {
     console.log('Card Service created.', http);
 
     this.actionUrl = 'http://wesuite.biz:81/Opportunityapi/json/UserLogin';
-    this.headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+    this.headers = new Headers({ 'Content-Type': 'application/json' });
     this.options = new RequestOptions({ headers: this.headers, method: "post" });
   }
 

@@ -23,7 +23,7 @@ export class CardComponent implements OnInit {
     cardService.loginUser().subscribe(//call the post
                 data => this.postLoginUser = JSON.stringify(data), // put the data returned from the server in our variable
                 error => console.log("Error HTTP Post Service"), // in case of failure show this message
-                () => console.log("Login Post !")//run this code in all cases
+                () => console.log(this.postLoginUser)//run this code in all cases
             );
   }
   ngOnInit() {
